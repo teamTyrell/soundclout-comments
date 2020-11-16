@@ -12,6 +12,11 @@
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/teamTyrell/soundclout-comments.git"
@@ -42,6 +47,7 @@
     "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "nodemon": "^2.0.6",
     "react-test-renderer": "^17.0.1",

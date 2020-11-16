@@ -1,0 +1,24 @@
+
+.App__container {
+  /* border: 1px solid black; */
+}
+
+.App__comments-heading {
+  height: 89px;
+  border-bottom: 1px solid #F2F2F2;
+  margin-bottom: 20px;
+}
+
+.App__comments-body {
+  display: flex;
+}
+
+.App__artist-container {
+  width: 148px;
+  height: 400px;
+}
+
+.App__comments-container {
+  flex: 1;
+}
+

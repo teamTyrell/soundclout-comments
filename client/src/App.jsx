@@ -12,9 +12,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
-        Hello World
-      </>
+      <div className='App__container'>
+
+        <div className='App__comments-heading'>
+
+        </div>
+
+        <div className='App__comments-body'>
+
+          <div className='App__artist-container'>
+
+          </div>
+
+          <div className='App__comments-container'>
+
+          </div>
+
+        </div>
+
+      </div>
     );
   }
 }
