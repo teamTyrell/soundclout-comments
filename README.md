@@ -42,7 +42,7 @@ You will need to set the following environment variables
 ```
 NODE_ENV
 DB_HOST
-DB_user
+DB_USER
 DB_PASS
 DB_NAME
 ```

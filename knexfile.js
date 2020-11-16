@@ -20,6 +20,20 @@ module.exports = {
     }
   },
 
+  testing: {
+    client: 'sqlite3',
+    connection: {
+      filename: path.resolve(__dirname, 'database/db.sqlite')
+    },
+    pool: { min: 0, max: 10 },
+    migrations: {
+      directory: path.resolve(__dirname, 'database/migrations')
+    },
+    seeds: {
+      directory: path.resolve(__dirname, 'database/seeds/dev')
+    }
+  },
+
   staging: {
     client: 'mysql',
     connection: {
@@ -31,6 +45,9 @@ module.exports = {
     pool: { min: 0, max: 10 },
     migrations: {
       directory: path.resolve(__dirname, 'database/migrations')
+    },
+    seeds: {
+      directory: path.resolve(__dirname, 'database/seeds/dev')
     }
   },
 
@@ -45,6 +62,9 @@ module.exports = {
     pool: { min: 0, max: 10 },
     migrations: {
       directory: path.resolve(__dirname, 'database/migrations')
+    },
+    seeds: {
+      directory: path.resolve(__dirname, 'database/seeds/dev')
     }
   }
 
