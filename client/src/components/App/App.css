@@ -1,5 +1,6 @@
 
 .App__container {
+  /* border: 1px solid black; */
 }
 
 .App__comments-heading {
@@ -20,3 +21,4 @@
 .App__comments-container {
   flex: 1;
 }
+

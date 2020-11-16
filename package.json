@@ -5,6 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
+    "test:changes": "jest -o",
+    "test:watch": "jest --watch",
+    "test:watchAll": "jest --watchAll",
+    "test:models": "jest database/models --watch",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch",
     "start": "node server.js",

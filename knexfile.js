@@ -20,7 +20,7 @@ module.exports = {
     }
   },
 
-  testing: {
+  test: {
     client: 'sqlite3',
     connection: {
       filename: path.resolve(__dirname, 'database/db.sqlite')
@@ -31,7 +31,8 @@ module.exports = {
     },
     seeds: {
       directory: path.resolve(__dirname, 'database/seeds/dev')
-    }
+    },
+    useNullAsDefault: true
   },
 
   staging: {
