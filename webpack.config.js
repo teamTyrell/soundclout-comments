@@ -7,7 +7,7 @@ module.exports = {
   entry: './client/src/index.js',
   watch: true,
   output: {
-    filename: 'bundle.js',
+    filename: 'comments.bundle.js',
     path: path.resolve(__dirname, 'client/dist/js'),
   },
   module: {
