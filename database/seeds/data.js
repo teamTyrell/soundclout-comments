@@ -25,8 +25,9 @@ const generateUsers = (n = TOTAL_USERS) => {
     const state = faker.address.state();
     const country = faker.address.country();
     const location = `${ state }, ${ country }`;
+    const followers = Math.floor(Math.random() * TOTAL_USERS);
 
-    users.push({ id, name, location });
+    users.push({ id, name, location, followers });
 
   }
 
