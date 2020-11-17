@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import {
+  ArtistInfo,
+} from '../components';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,7 +24,7 @@ class App extends React.Component {
         <div className='App__comments-body'>
 
           <div className='App__artist-container'>
-
+            <ArtistInfo />
           </div>
 
           <div className='App__comments-container'>

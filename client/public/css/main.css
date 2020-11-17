@@ -48,6 +48,7 @@ aside {
   padding: 0px 30px;
 }
 
+/* Break Points */
 @media only screen and (max-width: 1240px) {
 
   .container {
@@ -63,4 +64,41 @@ aside {
     min-width: 960px;
     max-width: 960px;
   }
+}
+
+/* Fonts */
+@font-face {
+  font-family: Interstate;
+  src: url('../assets/fonts/Interstate/interstate.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Interstate;
+  src: url('../assets/fonts/Interstate/interstate-bold.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Interstate;
+  src: url('../assets/fonts/Interstate/interstate-light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Interstate;
+  src: url('../assets/fonts/Interstate/interstate-extralight.ttf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Lucida Grande";
+  src: url('../assets/fonts/Lucida\ Grande/LucidaGrande.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lucida Grande";
+  src: url('../assets/fonts/Lucida\ Grande/LucidaGrandeBold.ttf');
+  font-weight: 500;
 }

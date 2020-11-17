@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [{
-          from: path.resolve(__dirname, 'client/public'),
+          from: path.resolve(__dirname, 'client/public/'),
           to: path.resolve(__dirname, 'client/dist')
         },
       ],
