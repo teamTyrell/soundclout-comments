@@ -9,10 +9,13 @@
     "test:watch": "jest --watch",
     "test:watchAll": "jest --watchAll",
     "test:models": "jest database/models --watch",
+    "test:controllers": "jest api/controllers --watch",
+    "test:routes": "jest api/routes --watch",
+    "test:middleware": "jest api/middleware --watch",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch",
-    "start": "node server.js",
-    "start:dev": "nodemon server.js",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run"
   },
@@ -57,6 +60,7 @@
     "react-test-renderer": "^17.0.1",
     "sqlite3": "^5.0.0",
     "style-loader": "^2.0.0",
+    "supertest": "^6.0.1",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0"
   }
