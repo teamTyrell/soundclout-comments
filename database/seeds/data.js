@@ -9,7 +9,7 @@ const faker = require('faker');
 const TOTAL_USERS = 200;
 const TOTAL_ARTISTS = 20;
 const TOTAL_SONGS = 100;
-const TOTAL_COMMENTS = process.env.NODE_ENV === 'testing'
+const TOTAL_COMMENTS = process.env.NODE_ENV === 'test'
   ? 199
   : 10000; // 10000
 
