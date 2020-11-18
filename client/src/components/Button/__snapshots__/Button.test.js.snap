@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> renders <Button /> 1`] = `
+<button
+  className="Button
+      Button--primary
+
+       Button--medium"
+/>
+`;

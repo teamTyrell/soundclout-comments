@@ -1,8 +1,12 @@
 import React from 'react';
 import './ArtistInfo.css';
+import {
+  Button,
+} from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
-import { faMusic } from '@fortawesome/free-solid-svg-icons'
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
+import { faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 const ArtistInfo = props => (
 
@@ -38,7 +42,19 @@ const ArtistInfo = props => (
 
     </div>
 
-    <button>Follow</button>
+    <Button size='small' type='primary'>
+
+      <div className='ArtistInfo__button-content'>
+
+        <FontAwesomeIcon
+          icon={ faUserPlus }
+          className='ArtistInfo__follow-button-icon'
+        />
+
+        <span>Follow</span>
+      </div>
+
+    </Button>
   </div>
 
 );
