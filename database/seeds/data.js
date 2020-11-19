@@ -16,6 +16,7 @@ const TOTAL_COMMENTS = process.env.NODE_ENV === 'test'
 const generateUsers = (n = TOTAL_USERS) => {
 
   const users = [];
+  const IMAGES = 19;
 
   for (let i = 1; i <= n; i++) {
 
@@ -28,8 +29,9 @@ const generateUsers = (n = TOTAL_USERS) => {
     const country = faker.address.country();
     const location = `${ state }, ${ country }`;
     const followers = Math.floor(Math.random() * TOTAL_USERS);
+    const image_url = `users/user-${ Math.floor((Math.random() * IMAGES) + 1)}.jpg`;
 
-    users.push({ id, name, location, followers });
+    users.push({ id, name, location, followers, image_url });
 
   }
 
@@ -41,13 +43,16 @@ const generateArtists = (n = TOTAL_ARTISTS) => {
 
   const artists = [];
 
+  const IMAGES = 8;
+
   for (let i = 1; i <= n; i++) {
 
     const id = i;
     const name = `${ faker.name.firstName() } ${ faker.name.lastName() }`;
     const followers = Math.floor(Math.random() * TOTAL_USERS);
+    const image_url = `artists/artist-${ Math.floor((Math.random() * IMAGES) + 1)}.jpg`;
 
-    artists.push({ id, name, followers });
+    artists.push({ id, name, followers, image_url });
 
   }
 

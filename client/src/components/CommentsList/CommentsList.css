@@ -1,0 +1,19 @@
+
+.CommentsList__heading {
+  border-bottom: 1px solid #F2F2F2;
+  padding-bottom: 8px;
+  display: flex;
+  color: #999;
+}
+
+
+.CommentsList__heading > h4 {
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+.CommentsList__comment-icon {
+  font-size: 1.4rem;
+  margin-right: 8px;
+}

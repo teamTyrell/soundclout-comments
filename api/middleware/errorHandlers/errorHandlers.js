@@ -17,6 +17,24 @@ const artistsErrorHandler = (err, req, res, next) => {
 
 };
 
+const songsErrorHandler = (err, req, res, next) => {
+
+  switch (err.message) {
+
+    case errors.SONG_NOT_FOUND:
+      res.status(404).json({ error: errors.SONG_NOT_FOUND });
+      break;
+
+    default:
+      console.error(err);
+      res.status(500).json({ error: errors.SERVER_ERROR });
+      break;
+
+  };
+
+};
+
 module.exports = {
   artistsErrorHandler,
+  songsErrorHandler,
 };

@@ -9,6 +9,7 @@ exports.up = function(knex) {
         table.string('name');
         table.string('location');
         table.integer('followers');
+        table.string('image_url');
 
       });
 

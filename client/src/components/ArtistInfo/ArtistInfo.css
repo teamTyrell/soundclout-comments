@@ -1,0 +1,76 @@
+
+.ArtistInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 198px;
+  width: 120px;
+}
+
+.ArtistInfo__profile-image {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ArtistInfo__artist-name {
+  font-size: 1.5rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #333;
+  cursor: pointer;
+}
+
+.ArtistInfo__artist-name:hover {
+  color: black;
+}
+
+.ArtistInfo__info-container {
+  display: flex;
+  width: 100%;
+  color: #999;
+}
+
+
+.ArtistInfo__info-container span {
+  font-size: 1.2rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+}
+
+.ArtistInfo__followers {
+  margin-right: 8px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.ArtistInfo__followers:hover span {
+  color: #333;
+}
+
+.ArtistInfo__followers-icon {
+  margin-right: 6px;
+  font-size: 1.3rem;
+}
+
+.ArtistInfo__tracks {
+  margin-right: 10px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.ArtistInfo__tracks:hover span {
+  color: #333;
+}
+
+.ArtistInfo__tracks-icon {
+  margin-right: 6px;
+  font-size: 1.3rem;
+}
+
+.ArtistInfo__follow-button-icon {
+  margin-right: 6px;
+  /* font-size: 1.2rem; */
+}

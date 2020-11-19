@@ -1,0 +1,31 @@
+
+.FollowLogin {
+  background-color: #F2F2F2;
+  padding: 10px;
+}
+
+.FollowLogin__cta-text {
+  color: #333;
+  font-size: 1.6rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  margin-bottom: 12px;
+}
+
+.FollowLogin__cta-text > span {
+  color: #38d;
+  cursor: pointer;
+}
+
+.FollowLogin__cta-text > span:hover {
+  color: #333;
+}
+
+.FollowLogin__buttons-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 7px;
+}
+
+.FollowLogin__buttons-container button:nth-child(1) {
+  margin-right: 5px;
+}

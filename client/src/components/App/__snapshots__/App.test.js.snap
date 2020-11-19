@@ -12,7 +12,107 @@ exports[`<App /> renders <App /> 1`] = `
   >
     <div
       className="App__artist-container"
-    />
+    >
+      <div
+        className="ArtistInfo"
+      >
+        <img
+          alt=""
+          className="ArtistInfo__profile-image"
+          height="120"
+          src="#"
+          width="120"
+        />
+        <h4
+          className="ArtistInfo__artist-name"
+        >
+          Trippie Redd
+        </h4>
+        <div
+          className="ArtistInfo__info-container"
+        >
+          <div
+            className="ArtistInfo__followers"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-user-friends fa-w-20 ArtistInfo__followers-icon"
+              data-icon="user-friends"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M192 256c61.9 0 112-50.1 112-112S253.9 32 192 32 80 82.1 80 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C51.6 288 0 339.6 0 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zM480 256c53 0 96-43 96-96s-43-96-96-96-96 43-96 96 43 96 96 96zm48 32h-3.8c-13.9 4.8-28.6 8-44.2 8s-30.3-3.2-44.2-8H432c-20.4 0-39.2 5.9-55.7 15.4 24.4 26.3 39.7 61.2 39.7 99.8v38.4c0 2.2-.5 4.3-.6 6.4H592c26.5 0 48-21.5 48-48 0-61.9-50.1-112-112-112z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            <span>
+              1.42M
+            </span>
+          </div>
+          <div
+            className="ArtistInfo__tracks"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-music fa-w-16 ArtistInfo__followers-icon"
+              data-icon="music"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            <span>
+              201
+            </span>
+          </div>
+        </div>
+        <button
+          className="Button
+      Button--primary
+
+       Button--small"
+        >
+          <div
+            className="ArtistInfo__button-content"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-user-plus fa-w-20 ArtistInfo__follow-button-icon"
+              data-icon="user-plus"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            <span>
+              Follow
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
     <div
       className="App__comments-container"
     />

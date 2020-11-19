@@ -23,13 +23,16 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react']
         }
       }
+    }, {
+      test: /\.(png|svg|jpg|jpeg|gif)$/i,
+      type: 'asset/resource',
     }],
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   plugins: [
     new CopyPlugin({
       patterns: [{
-          from: path.resolve(__dirname, 'client/public'),
+          from: path.resolve(__dirname, 'client/public/'),
           to: path.resolve(__dirname, 'client/dist')
         },
       ],

@@ -1,0 +1,23 @@
+
+.Input {
+  width: 100%;
+}
+
+.Input__input {
+  width: 100%;
+  border-radius: 4px;
+  height: 27px;
+  font-size: 1.4rem;
+  padding: 3px 9px 0 9px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  font-family: "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  display: flex;
+  margin: 0;
+}
+
+.Input__input--focused {
+  border-color: #ccc;
+}
