@@ -55,8 +55,6 @@ class App extends React.Component {
     getSongComments(id, page + 1, 10)
       .then(comments => {
 
-        console.log(comments);
-
         this.setState({ comments: {
           ...this.state.comments,
           page: comments.page,

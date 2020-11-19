@@ -7,7 +7,7 @@ import {
 const CommentInput = props => (
   <div className='CommentInput'>
 
-    <img className='CommentInput__user-photo' src='#' alt='' height='40' width='40'></img>
+    <img className='CommentInput__user-photo' src='https://soundclout-images.s3.ca-central-1.amazonaws.com/user.jpg' alt='' height='40' width='40'></img>
 
     <div
       className={ `CommentInput__input-container ${ props.focused && 'CommentInput__input-container--active' }` }

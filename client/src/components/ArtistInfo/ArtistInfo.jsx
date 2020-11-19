@@ -14,7 +14,7 @@ const ArtistInfo = props => (
 
     <img
       className='ArtistInfo__profile-image'
-      src='#'
+      src={ props.artist.image_url && `https://soundclout-images.s3.ca-central-1.amazonaws.com/${ props.artist.image_url }` }
       width='120'
       height='120'
       alt=''

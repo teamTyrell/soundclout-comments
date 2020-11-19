@@ -5,7 +5,7 @@ const Comment = props => (
   <div className={ `Comment ${ props.isReply && `Comment--reply`}` }>
 
     <div className='Comment__left-container'>
-      <img className='Comment__user-photo' src='#' alt='' width='40' height='40'></img>
+      <img className='Comment__user-photo' src={ props.user && `https://soundclout-images.s3.ca-central-1.amazonaws.com/${ props.user.image_url }`} alt='' width='40' height='40'></img>
     </div>
 
     <div className='Comment__mid-container'>
