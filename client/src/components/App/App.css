@@ -7,6 +7,76 @@
   height: 89px;
   border-bottom: 1px solid #F2F2F2;
   margin-bottom: 20px;
+  /* border: 1px solid black; */
+}
+
+.App__comment-input-container {
+  margin-bottom: 12px;
+}
+
+.App__song-actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.App__song-actions-buttons > button {
+  margin-right: 5px;
+}
+
+.App__button-content {
+  display: flex;
+  align-items: center;
+}
+
+.App__button-content > span {
+  margin-left: 8px;
+  color: #333;
+}
+
+.App__like-icon {
+  font-size: 1.3rem;
+}
+
+.App__plays-icon {
+  font-size: 1.1rem;
+  color: #999;
+  margin-right: 6px;
+}
+
+.App__likes-icon {
+  font-size: 1.1rem;
+  color: #999;
+  margin-right: 4px;
+}
+
+.App__reposts-icon {
+  font-size: 1.3rem;
+  color: #999;
+  margin-right: 4px;
+}
+
+.App__song-actions-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 152px;
+}
+
+.App__song-info {
+  cursor: pointer;
+}
+
+.App__song-info > span {
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #999;
+}
+
+.App__song-info:hover > span {
+  color: #333;
 }
 
 .App__comments-body {
@@ -22,3 +92,6 @@
   flex: 1;
 }
 
+.App__comments-meta-info {
+  margin: 20px 0;
+}

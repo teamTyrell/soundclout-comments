@@ -1,5 +1,25 @@
 import axios from 'axios';
 
+export const formatNumber = num => {
+
+  const numArr = num.toString().split('');
+  let number = '';
+  let j = 1;
+
+  for (let i = numArr.length - 1; i >= 0; i--) {
+
+    number = numArr[i] + number;
+    if (j % 3 === 0 && i !== 0) {
+      number = ',' + number;
+    }
+    j++;
+
+  }
+
+  return number;
+
+};
+
 export const getRandomSongAndData = songs => {
 
   return new Promise((resolve, reject) => {
@@ -10,7 +30,7 @@ export const getRandomSongAndData = songs => {
     getArtist(song.artist_id)
       .then(artist => {
 
-        getSongComments(song.id, 1, 25)
+        getSongComments(song.id)
           .then(comments => {
 
             resolve({ song, comments, artist });
@@ -23,12 +43,12 @@ export const getRandomSongAndData = songs => {
 
 };
 
-export const getSongComments = (song_id, page, results) => {
+export const getSongComments = (song_id, page = 1, results = 10) => {
 
   return new Promise((resolve, reject) => {
 
     axios({
-      url: `/api/songs/${ song_id }/comments`,
+      url: `/api/songs/${ song_id }/comments?page=${ page }&results=${ results }`,
       method: 'GET',
     }).then(({ data }) => resolve(data))
     .catch(reject);

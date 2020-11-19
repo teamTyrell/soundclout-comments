@@ -1,0 +1,56 @@
+.Comment {
+  display: flex;
+  padding: 10px;
+  padding-left: 0px;
+}
+
+.Comment--reply {
+  margin-left: 20px;
+}
+
+.Comment__left-container {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.Comment__user-photo {
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.Comment__mid-container {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.Comment__comment-info {
+  color: #ccc;
+  font-family: "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-size: 1.1rem;
+}
+
+.Comment__comment-info > span {
+  color: #999;
+  cursor: pointer;
+}
+
+.Comment__comment-info > span:hover {
+  color: #333;
+}
+
+.Comment__comment-info > span:nth-child(1) {
+  font-size: 1.2rem;
+}
+
+.Comment__comment-text {
+  font-size: 1.2rem;
+  font-family: "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #333;
+  line-height: 16px;
+  margin-top: 5px;
+}
+
+.Comment__right-container {
+  width: 65px;
+}

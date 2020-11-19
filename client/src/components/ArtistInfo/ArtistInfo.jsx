@@ -20,24 +20,28 @@ const ArtistInfo = props => (
       alt=''
     ></img>
 
-    <h4 className='ArtistInfo__artist-name'>Trippie Redd</h4>
+    <h4 className='ArtistInfo__artist-name'>{ props.artist.name }</h4>
 
     <div className='ArtistInfo__info-container'>
 
-      <div className='ArtistInfo__followers'>
+      <div
+        title={ `${ props.artist.followers } followers`}
+        className='ArtistInfo__followers'>
         <FontAwesomeIcon
           icon={ faUserFriends }
           className='ArtistInfo__followers-icon'
         />
-        <span>1.42M</span>
+        <span>{ props.artist.followers }</span>
       </div>
 
-      <div className='ArtistInfo__tracks'>
+      <div
+        title={ `${ props.artist.songs } tracks`}
+        className='ArtistInfo__tracks'>
         <FontAwesomeIcon
           icon={ faMusic }
           className='ArtistInfo__followers-icon'
         />
-        <span>201</span>
+        <span>{ props.artist.songs }</span>
       </div>
 
     </div>

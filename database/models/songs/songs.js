@@ -27,7 +27,22 @@ const readSongById = id => {
 
 };
 
+const readSongsByArtistId = artist_id => {
+
+  return new Promise((resolve, reject) => {
+
+    db('songs')
+      .where({ artist_id })
+      .select()
+      .then(resolve)
+      .catch(reject);
+
+  });
+
+}
+
 module.exports = {
   readSongs,
   readSongById,
+  readSongsByArtistId,
 };

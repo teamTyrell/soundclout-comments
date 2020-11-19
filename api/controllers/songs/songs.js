@@ -23,6 +23,7 @@ const getSongComments = (req, res, next) => {
     readCommentsBySongId(song_id)
       .then(comments => {
 
+        const total = comments.length;
         const userPromises = [];
 
         comments.forEach(({ user_id }) => {
@@ -81,9 +82,9 @@ const getSongComments = (req, res, next) => {
 
                 comments.forEach(comment => comment.replies = replies[comment.id]);
 
-                const pages = Math.floor(comments.length / results);
-                const startIndex = (results * page) - 1;
-                const stopIndex = (startIndex + results) - 1;
+                const pages = Math.ceil(comments.length / results);
+                const stopIndex = (results * page) - 1;
+                const startIndex = (stopIndex - results) + 1;
 
                 const finalComments = comments.filter((comment, i) => {
                   return i >= startIndex && i <= stopIndex && comment !== null;
@@ -93,6 +94,7 @@ const getSongComments = (req, res, next) => {
                   page: parseInt(page),
                   pages,
                   results: finalComments.length,
+                  total,
                   comments: finalComments
                 })
 
