@@ -15,6 +15,7 @@
 
 .Comment__user-photo {
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .Comment__mid-container {

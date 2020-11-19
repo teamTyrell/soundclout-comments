@@ -32,7 +32,7 @@ class Loader extends React.Component {
 
             });
 
-          }, 500);
+          }, 800);
 
         }
 

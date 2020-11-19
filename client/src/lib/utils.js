@@ -1,5 +1,28 @@
 import axios from 'axios';
 
+export const formatSongTime = num => {
+
+  let seconds = 0;
+  let minutes = 0;
+
+
+  for (let i = 1; i <= num; i++) {
+
+    seconds++;
+
+    if (seconds % 60 === 0) {
+      minutes++;
+      seconds = 0;
+    }
+
+  }
+
+  minutes = minutes.toString();
+  seconds = seconds.toString();
+
+  return `${ minutes }:${ seconds.length < 2 ? `0${ seconds }` : seconds }`
+}
+
 export const formatNumber = num => {
 
   const numArr = num.toString().split('');

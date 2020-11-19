@@ -1,5 +1,8 @@
 import React from 'react';
 import './Comment.css';
+import {
+  formatSongTime,
+} from '../../lib/utils';
 
 const Comment = props => (
   <div className={ `Comment ${ props.isReply && `Comment--reply`}` }>
@@ -11,7 +14,7 @@ const Comment = props => (
     <div className='Comment__mid-container'>
 
       <h6 className='Comment__comment-info'>
-        <span>{ props.user.name }</span> at <span>{ props.song_at }</span></h6>
+        <span>{ props.user.name }</span> at <span>{ props.song_at && formatSongTime(props.song_at) }</span></h6>
 
       <p className='Comment__comment-text'>{ props.text }</p>
     </div>

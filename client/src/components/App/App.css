@@ -21,6 +21,11 @@
   width: 100%;
 }
 
+.App__song-actions-buttons {
+  display: flex;
+  align-items: center;
+}
+
 .App__song-actions-buttons > button {
   margin-right: 5px;
 }
@@ -59,13 +64,14 @@
 
 .App__song-actions-info {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
-  min-width: 152px;
+  /* min-width: 152px; */
 }
 
 .App__song-info {
   cursor: pointer;
+  margin-left: 12px;
 }
 
 .App__song-info > span {

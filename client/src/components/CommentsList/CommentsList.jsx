@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCommentAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  formatNumber,
+} from '../../lib/utils';
 
 const CommentsList = props => {
 
@@ -21,7 +24,7 @@ const CommentsList = props => {
           className='CommentsList__comment-icon'
         />
 
-        <h4>7,160 comments</h4>
+        <h4>{ props.comments.total && formatNumber(props.comments.total) } comments</h4>
       </div>
 
       <div className='CommentsList__comments'>
