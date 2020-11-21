@@ -1,10 +1,10 @@
 
-DROP DATABASE IF EXISTS soundcloutComments;
+DROP DATABASE IF EXISTS soundcloutcomments;
 
-CREATE DATABASE soundcloutComments;
+CREATE DATABASE soundcloutcomments;
 
-USE soundcloutComments;
+USE soundcloutcomments;
 
 -- CREATE USER 'hrr49-user'@'localhost' IDENTIFIED BY 'hrr49';
 
-GRANT ALL PRIVILEGES ON soundclout.* TO 'hrr49-user'@'localhost';
+GRANT ALL PRIVILEGES ON soundcloutcomments.* TO 'hrr49-user'@'localhost';
