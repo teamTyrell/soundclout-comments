@@ -1,9 +1,9 @@
 
-DROP DATABASE IF EXISTS soundclout;
+DROP DATABASE IF EXISTS soundcloutComments;
 
-CREATE DATABASE soundclout;
+CREATE DATABASE soundcloutComments;
 
-USE soundclout;
+USE soundcloutComments;
 
 -- CREATE USER 'hrr49-user'@'localhost' IDENTIFIED BY 'hrr49';
 
