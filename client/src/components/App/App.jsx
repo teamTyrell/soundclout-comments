@@ -81,7 +81,7 @@ class App extends React.Component {
   toggleInputFocus(e) {
 
     this.setState({ commentInputIsFocused: !this.state.commentInputIsFocused });
-    console.log('test');
+
   }
 
   componentDidMount() {
@@ -288,6 +288,7 @@ class App extends React.Component {
 
             <CommentsList
               comments={ this.state.comments }
+              collapseButtons={ this.state.collapseButtons }
             />
 
             {

@@ -52,5 +52,33 @@
 }
 
 .Comment__right-container {
-  width: 65px;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.Comment__timestamp {
+  font-size: 1.1rem;
+  font-family: "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+}
+
+.Comment__user-mention {
+  color: #38d;
+  text-decoration: none;
+}
+
+.Comment__user-mention:hover {
+  color: #333;
+}
+
+.Comment__button-content > span {
+  margin-left: 10px;
+}
+
+.Comment__reply-icon {
+  color: #666;
 }
