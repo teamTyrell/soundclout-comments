@@ -37,11 +37,23 @@ const CommentsList = props => {
 
               return (
                 <div key={ index }>
-                  <Comment { ...comment } isReply={ false } />
+                  <Comment
+                    collapseButtons={ props.collapseButtons }
+                    { ...comment }
+                    isReply={ false }
+                    id={ `comment-${ index }` }
+                  />
                   {
                     replies &&
                       replies.map((reply, i) => (
-                        <Comment { ...reply } isReply={ true } key={ i } />
+                        <Comment
+                          collapseButtons={ props.collapseButtons }
+                          { ...reply }
+                          replyTo={ comment.user.name }
+                          isReply={ true }
+                          key={ i }
+                          id={ `reply-${ i }` }
+                        />
                       ))
                   }
                 </div>

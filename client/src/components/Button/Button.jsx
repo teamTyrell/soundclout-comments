@@ -3,6 +3,8 @@ import './Button.css';
 
 const Button = props => (
   <button
+    id={ props.id && props.id }
+    onMouseOver={ props.onMouseOver && props.onMouseOver }
     className={
 
       `Button
