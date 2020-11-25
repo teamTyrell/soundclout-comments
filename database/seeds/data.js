@@ -1,4 +1,5 @@
 const faker = require('faker');
+const moment = require('moment');
 
 /**
  * For realistic data, make sure to set less
@@ -8,7 +9,10 @@ const faker = require('faker');
 
 const TOTAL_USERS = 200;
 const TOTAL_ARTISTS = 20;
+const TOTAL_ALBUMS = 10;
 const TOTAL_SONGS = 100;
+const TOTAL_PLAYLISTS = 10;
+const TOTAL_TAGS = 10;
 const TOTAL_COMMENTS = process.env.NODE_ENV === 'test'
   ? 199
   : 10000; // 10000
@@ -59,21 +63,49 @@ const generateArtists = (n = TOTAL_ARTISTS) => {
   return artists;
 };
 
-const generateSongs = (n = TOTAL_SONGS) => {
+const generateAlbums = (n = TOTAL_ALBUMS) => {
 
-  const songs = [];
-  let artistId = 1;
-  const increment = TOTAL_SONGS / TOTAL_ARTISTS;
+  const albums = [];
+  const IMAGES = 10;
 
   for (let i = 1; i <= n; i++) {
 
     const id = i;
+    const wordCount = Math.floor(Math.random() * 3) + 1;
+    const name = faker.random.words(wordCount);
+    const image_url = `albums/album-${ Math.floor((Math.random() * IMAGES) + 1)}.jpg`;
+    const release_date = moment(faker.date.past()).format('DD MMMM YYYY');
+
+    albums.push({ id, name, release_date, image_url });
+
+  }
+
+  return albums;
+
+};
+
+const generateSongs = (n = TOTAL_SONGS) => {
+
+  const songs = [];
+  let artistId = 1;
+  let albumId = 1;
+  const incrementArtist = TOTAL_SONGS / TOTAL_ARTISTS;
+  const incrementAlbum = TOTAL_SONGS / TOTAL_ALBUMS
+
+  for (let i = 1; i <= n; i++) {
+
+    const id = i;
+
+    const wordCount = Math.floor(Math.random() * 6) + 1;
+    const name = faker.random.words(wordCount);
+    const explicit = Math.round(Math.random()) === 0 ? false : true;
     const plays = Math.floor(Math.random() * 150000) + 1000;
     const likes = Math.floor(Math.random() * TOTAL_USERS);
     const reposts = Math.floor(Math.random() * TOTAL_USERS);
-    const artist_id = i % increment === 0 ? artistId++ : artistId;
+    const artist_id = i % incrementArtist === 0 ? artistId++ : artistId;
+    const album_id = i % incrementAlbum === 0 ? albumId++ : albumId;
 
-    songs.push({ id, plays, likes, reposts, artist_id });
+    songs.push({ id, name, explicit, plays, likes, reposts, artist_id, album_id });
   }
 
   return songs;
@@ -153,10 +185,88 @@ const generateReplies = () => {
 
 };
 
+const generatePlaylists = (n = TOTAL_PLAYLISTS) => {
+
+  const playlists = [];
+  const IMAGES = 10;
+
+  for (let i = 1; i <= n; i++) {
+
+    const id = i;
+    const wordCount = Math.floor(Math.random() * 3) + 1;
+    const name = faker.random.words(wordCount);
+    const image_url = `playlists/playlist-${ Math.floor((Math.random() * IMAGES) + 1)}.jpg`;
+    const likes = Math.floor(Math.random() * TOTAL_USERS);
+    const reposts = Math.floor(Math.random() * TOTAL_USERS);
+    const user_id = Math.floor(Math.random() * TOTAL_USERS) + 1;
+
+    playlists.push({ id, name, image_url, likes, reposts, user_id });
+  }
+
+  return playlists;
+};
+
+const generateSongsPlaylists = (n = TOTAL_SONGS) => {
+
+  const songsPlaylists = [];
+  const increment = TOTAL_SONGS / TOTAL_PLAYLISTS;
+  let playlistId = 1;
+
+  for (let i = 1; i <= n; i++) {
+
+    const song_id = i;
+    const playlist_id = i % increment === 0 ? playlistId++ : playlistId;
+
+    songsPlaylists.push({ song_id, playlist_id });
+
+  }
+
+  return songsPlaylists;
+
+};
+
+const generateTags = (n = TOTAL_TAGS) => {
+
+  const tags = [];
+
+  for (let i = 1; i <= n; i++) {
+
+    const id = i;
+    const name = faker.random.word();
+
+    tags.push({ id, name });
+  }
+
+  return tags;
+
+};
+
+const generateSongsTags = (n = TOTAL_SONGS) => {
+
+  const songsTags = [];
+
+  for (let i = 1; i <= n; i++) {
+
+    const song_id = i;
+    const tag_id = Math.floor(Math.random() * TOTAL_TAGS) + 1;
+
+    songsTags.push({ song_id, tag_id });
+
+  }
+
+  return songsTags;
+
+};
+
 module.exports = {
   generateUsers,
   generateArtists,
+  generateAlbums,
   generateSongs,
   generateComments,
   generateReplies,
+  generatePlaylists,
+  generateSongsPlaylists,
+  generateTags,
+  generateSongsTags,
 };
