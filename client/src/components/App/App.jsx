@@ -7,6 +7,7 @@ import {
   Button,
   CommentsList,
   Loader,
+  Navbar,
 } from '../components';
 import {
   getSongs,
@@ -22,7 +23,7 @@ import {
   faShareSquare,
   faPlay,
   faEllipsisH,
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
 
 class App extends React.Component {
   constructor(props) {
@@ -136,6 +137,7 @@ class App extends React.Component {
 
     return (
       <div className='App__container'>
+        <Navbar collapseButtons={ this.state.collapseButtons } />
 
         <div className='App__comments-heading'>
 
@@ -152,7 +154,7 @@ class App extends React.Component {
 
             <div className='App__song-actions-buttons'>
 
-              <Button type='secondary'>
+              <Button type='default'>
 
                 <div className='App__button-content'>
                   <FontAwesomeIcon
@@ -166,7 +168,7 @@ class App extends React.Component {
 
               </Button>
 
-              <Button type='secondary'>
+              <Button type='default'>
 
                 <div className='App__button-content'>
                   <FontAwesomeIcon
@@ -180,7 +182,7 @@ class App extends React.Component {
 
               </Button>
 
-              <Button type='secondary'>
+              <Button type='default'>
 
                 <div className='App__button-content'>
                   <FontAwesomeIcon
@@ -194,7 +196,7 @@ class App extends React.Component {
 
               </Button>
 
-              <Button type='secondary'>
+              <Button type='default'>
 
                 <div className='App__button-content'>
                   <FontAwesomeIcon
@@ -208,7 +210,7 @@ class App extends React.Component {
 
               </Button>
 
-              <Button type='secondary'>
+              <Button type='default'>
 
                 <div className='App__button-content'>
                   <FontAwesomeIcon

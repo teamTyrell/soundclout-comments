@@ -23,7 +23,7 @@ const FollowLogin = props => (
       </Button>
 
       <Button
-        type='secondary'
+        type='default'
         size='medium'
       >
         Sign in

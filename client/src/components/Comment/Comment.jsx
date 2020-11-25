@@ -137,7 +137,7 @@ class Comment extends React.Component {
           { this.state.hover && (
               <Button
                 id={ `comment-reply-button` }
-                type='secondary'
+                type='default'
                 size='small'
               >
 

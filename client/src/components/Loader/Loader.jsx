@@ -48,7 +48,7 @@ class Loader extends React.Component {
 
     return (
       <div id='loader-container' className='Loader'>
-        <img src={ loaderGif } alt='Loader GIF'></img>
+        <img src='https://soundclout-images.s3.ca-central-1.amazonaws.com/loader.gif' alt='Loader GIF'></img>
       </div>
     );
   }

@@ -1,0 +1,126 @@
+
+.Navbar {
+  background-color: #333333;
+  height: 46px;
+  position: fixed;
+  width: 100%;
+  /* border: 1px solid black; */
+  top: 0;
+  left: 0;
+}
+
+.Navbar__container {
+  padding: 0px;
+  height: 100%;
+  display: flex;
+}
+
+.Navbar__logo-container {
+  background-color: #FF5500;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  padding: 0 12px;
+  text-decoration: none;
+}
+
+.Navbar__logo {
+  color: white;
+  font-size: 3.8rem;
+  display: block;
+  margin-top: 3px;
+}
+
+.Navbar__logo-text {
+  color: white;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 16px;
+  margin-left: 6px;
+}
+
+.Navbar__links-list {
+  display: flex;
+  height: 100%;
+}
+
+.Navbar__links-list > li {
+  border-right: 1px solid #111;
+}
+
+.Navbar__link {
+  color: #ccc;
+  text-decoration: none;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+}
+
+
+.Navbar__link:hover {
+  color: #eee;
+}
+
+.Navbar__search-input-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.Navbar__search-input {
+  width: 100%;
+  background-color: #E5E5E5;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 7px;
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.Navbar__search-input:focus {
+  background-color: white;
+}
+
+.Navbar__actions-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+  height: 100%;
+}
+
+.Navbar__action-link {
+  width: 64px;
+}
+
+.Navbar__more-link {
+  width: 46px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.Navbar__more-icon {
+  font-size: 2.4rem;
+  color: #ccc;
+}
+
+.Navbar__more-link:hover .Navbar__more-icon {
+  color: #fff;
+}
+
+.Navbar__create-account-button {
+  margin-left: 10px;
+}

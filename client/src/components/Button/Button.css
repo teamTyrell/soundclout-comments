@@ -10,14 +10,24 @@
   border: none;
 }
 
-.Button--secondary {
+.Button--default {
   background-color: white;
   color: #333;
   border: 1px solid #e5e5e5;
 }
 
-.Button--secondary:hover {
+.Button--default:hover {
   border-color: #ccc;
+}
+
+.Button--secondary {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.Button--secondary:hover {
+  border-color:#999;
 }
 
 .Button--medium {
@@ -28,4 +38,11 @@
 .Button--small {
   font-size: 1.1rem;
   padding: 3px 9px 3px 8px;
+}
+
+.Navbar__actions-container {
+  width: 333px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
