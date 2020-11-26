@@ -139,16 +139,16 @@ class Aside extends React.Component {
 
         </div>
 
-        <div className='Aside__go-mobile'>
+        {
+          this.state.goMobileVisible &&
+            <div className='Aside__go-mobile'>
 
-          {
-            this.state.goMobileVisible &&
               <GoMobile
                 handleClose={ this.closeGoMobile }
               />
-          }
 
-        </div>
+            </div>
+        }
 
         <div className='Aside__footer'>
 
