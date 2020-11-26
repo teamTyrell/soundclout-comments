@@ -1,0 +1,104 @@
+.InAlbums {
+  display: flex;
+  flex-direction: column;
+}
+
+.InAlbums__heading {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.InAlbums__heading > h3 {
+  font-size: 1.5rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+}
+
+.InAlbums__heading > a {
+  font-size: 1.5rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.InAlbums__heading:hover > a {
+  color: #333;
+}
+
+.InAlbums__albums-icon {
+  font-size: 1.7rem;
+  color: #999;
+  margin-right: 6px;
+}
+
+.InAlbums__album {
+  display: flex;
+  margin-top: 12px;
+}
+
+.InAlbums__album-image-container {
+  background: url('https://soundclout-images.s3.ca-central-1.amazonaws.com/cover.png');
+  min-width: 62px;
+  min-height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.InAlbums__album-image {
+  cursor: pointer;
+}
+
+.InAlbums__album-info-container {
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 4px;
+}
+
+.InAlbums__artist-name {
+  font-size: 1.4rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.InAlbums__artist-name > span:hover {
+  color: #333;
+}
+
+.InAlbums__album-name {
+  font-size: 1.4rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.InAlbums__album-name > span:hover {
+  color: #000;
+}
+
+.InAlbums__alt-info-container > h5 {
+  font-size: 1.3rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+}

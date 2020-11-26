@@ -1,0 +1,39 @@
+.AsideFooter {
+  padding-top: 11px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.AsideFooter__links-container {
+  font-size: 1.2rem;
+  font-family: "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.AsideFooter__links-container > a {
+  color: #ccc;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+
+.AsideFooter__links-container > a:hover {
+  color:#999;
+}
+
+.AsideFooter__language {
+  font-size: 1.2rem;
+  font-family: "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #38d;
+  text-decoration: none;
+}
+
+.AsideFooter__language:hover {
+  color: #333;
+}
+
+.AsideFooter__language > span {
+  color: #333;
+}

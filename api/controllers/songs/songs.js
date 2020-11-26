@@ -12,6 +12,9 @@ const { readRepliesByCommentId } = replies;
 const { users } = require('../../../database/models');
 const { readUserById } = users;
 
+const { playlists } = require('../../../database/models');
+const { readPlaylistsBySongId, readSongsByPlaylistId } = playlists;
+
 const getSongComments = (req, res, next) => {
 
   const { song_id } = req.params;
@@ -151,8 +154,59 @@ const getSongById = (req, res, next) => {
 
 };
 
+const getSongPlaylists = (req, res, next) => {
+
+  const { song_id } = req.params;
+
+  readPlaylistsBySongId(song_id)
+    .then(playlists => {
+
+      const songsPromises = [];
+
+      playlists.forEach(({ id }) => {
+        songsPromises.push(readSongsByPlaylistId(id));
+      });
+
+      Promise.all(songsPromises)
+        .then(songsArr => {
+
+          songsArr.forEach((songs, i) => {
+            playlists[i].songs = songs;
+          });
+
+          const userPromises = [];
+
+          playlists.forEach(({ user_id }) => {
+            userPromises.push(readUserById(user_id));
+          });
+
+          Promise.all(userPromises)
+            .then(usersArr => {
+
+              usersArr.forEach((user, i) => {
+                playlists[i].user = user;
+                delete playlists[i].user_id;
+              });
+
+
+              res.status(200).json(playlists);
+            });
+
+        }).catch(readSongsError => {
+          console.log(readSongsError);
+          res.sendStatus(500);
+        });
+
+    }).catch(readPlaylistsError => {
+      console.log(readPlaylistsError);
+      res.sendStatus(500);
+    });
+
+};
+
 module.exports = {
   getSongById,
   getSongs,
   getSongComments,
+  getSongPlaylists,
 };

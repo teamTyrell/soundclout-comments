@@ -1,0 +1,28 @@
+.Aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.Aside__related-tracks {
+  margin-bottom: 40px;
+}
+
+.Aside__in-albums {
+  margin-bottom: 40px;
+}
+
+.Aside__in-playlists {
+  margin-bottom: 40px;
+}
+
+.Aside__likes {
+  margin-bottom: 40px;
+}
+
+.Aside__reposts {
+  margin-bottom: 40px;
+}
+
+.Aside__go-mobile {
+  margin-bottom: 40px;
+}

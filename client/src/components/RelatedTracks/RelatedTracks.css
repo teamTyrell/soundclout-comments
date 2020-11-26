@@ -1,0 +1,121 @@
+.RelatedTracks {
+  display: flex;
+  flex-direction: column;
+}
+
+.RelatedTracks__heading {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.RelatedTracks__heading > h3 {
+  font-size: 1.5rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+}
+
+.RelatedTracks__heading > a {
+  font-size: 1.5rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.RelatedTracks__heading:hover > a {
+  color: #333;
+}
+
+.RelatedTracks__songs-icon {
+  font-size: 1.7rem;
+  color: #999;
+  margin-right: 6px;
+}
+
+.RelatedTracks__tracks-list {
+  margin-top: 15px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.RelatedTracks__track {
+  display: flex;
+  /* border: 1px solid black; */
+}
+
+.RelatedTracks__track-image {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.RelatedTracks__track-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.RelatedTracks__artist-name {
+  font-size: 1.4rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.RelatedTracks__artist-name > span:hover {
+  color: #333;
+}
+
+.RelatedTracks__track-name {
+  font-size: 1.4rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.RelatedTracks__track-name > span:hover {
+  color: #000;
+}
+
+.RelatedTracks__alt-info {
+  display: flex;
+}
+
+.RelatedTracks__alt-info-item {
+  font-size: 1.2rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.RelatedTracks__alt-info-item:nth-child(4) {
+  margin: 0;
+}
+
+.RelatedTracks__icon {
+  margin-right: 7px;
+  font-size: 1.1rem;
+}
+
+.RelatedTracks__alt-info-item:hover > span {
+  color: #333;
+}

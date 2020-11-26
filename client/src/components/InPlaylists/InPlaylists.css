@@ -1,0 +1,125 @@
+.InPlaylists {
+  display: flex;
+  flex-direction: column;
+}
+
+.InPlaylists__heading {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.InPlaylists__heading > h3 {
+  font-size: 1.5rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+}
+
+.InPlaylists__heading > a {
+  font-size: 1.5rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.InPlaylists__heading:hover > a {
+  color: #333;
+}
+
+.InPlaylists__playlists-icon {
+  font-size: 1.7rem;
+  color: #999;
+  margin-right: 6px;
+}
+
+.InPlaylists__playlist {
+  display: flex;
+  margin-top: 12px;
+}
+
+.InPlaylists__playlist-image-container {
+  background: url('https://soundclout-images.s3.ca-central-1.amazonaws.com/cover.png');
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  min-height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.InPlaylists__playlist-image {
+  cursor: pointer;
+}
+
+.InPlaylists__playlist-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 6px 0;
+  margin-left: 4px;
+}
+
+.InPlaylists__user-name {
+  font-size: 1.4rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.InPlaylists__user-name > span:hover {
+  color: #333;
+}
+
+.InPlaylists__playlist-name {
+  font-size: 1.4rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.InPlaylists__playlist-name > span:hover {
+  color: #000;
+}
+
+.InPlaylists__alt-info {
+  display: flex;
+}
+
+.InPlaylists__alt-info-item {
+  font-size: 1.2rem;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  color: #999;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.InPlaylists__alt-info-item:nth-child(4) {
+  margin: 0;
+}
+
+.InPlaylists__icon {
+  margin-right: 7px;
+  font-size: 1.1rem;
+}
+
+.InPlaylists__alt-info-item:hover > span {
+  color: #333;
+}

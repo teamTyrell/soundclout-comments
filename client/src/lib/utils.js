@@ -43,6 +43,52 @@ export const formatNumber = num => {
 
 };
 
+export const getRandomTracks = (songs = 100, num = 3) => {
+
+  return new Promise((resolve, reject) => {
+
+    const songPromises = [];
+    const songsCache = {};
+
+    for (let i = 0; i < num; i++) {
+
+      let songId = Math.floor(Math.random() * songs) + 1;
+      while (songsCache[songId]) {
+        let songId = Math.floor(Math.random() * songs) + 1;
+      }
+      songsCache[songId] = songId;
+
+      songPromises.push(getSong(songId));
+
+    }
+
+    Promise.all(songPromises)
+      .then(songs => {
+
+        const albumPromises = [];
+
+        songs.forEach(({ album_id }) => albumPromises.push(getAlbum(album_id)))
+
+        Promise.all(albumPromises)
+          .then(albums => {
+
+            songs.forEach((song, i) => {
+
+              song.album = albums[i];
+              delete song.album_id;
+              delete song.artist_id;
+
+            });
+
+            resolve(songs);
+
+          }).catch(reject);
+
+      }).catch(reject);
+  });
+
+};
+
 export const getRandomSongAndData = songs => {
 
   return new Promise((resolve, reject) => {
@@ -60,6 +106,43 @@ export const getRandomSongAndData = songs => {
 
           }).catch(reject);
 
+      }).catch(reject);
+
+  });
+
+};
+
+export const getRandomUsers = (num = 9, totalUsers = 100) => {
+
+  return new Promise((resolve, reject) => {
+
+    const userCache = { 0: 0 };
+    const userIds = [];
+
+    for (let i = 0; i < num; i++) {
+
+      let userId = 0;
+      while (userId in userCache) {
+        userId = Math.floor(Math.random() * totalUsers) + 1;
+      }
+
+      userIds.push(userId);
+
+    }
+
+    const promises = [];
+
+    userIds.forEach(id => {
+
+      promises.push(axios({
+        url: `/api/users/${ id }`,
+        method: 'GET',
+      }).then(({ data }) => data));
+    });
+
+    Promise.all(promises)
+      .then(users => {
+        resolve(users);
       }).catch(reject);
 
   });
@@ -120,3 +203,31 @@ export const getArtist = id => {
 
   });
 }
+
+export const getAlbum = id => {
+
+  return new Promise((resolve, reject) => {
+
+    axios({
+      url: `/api/albums/${ id }`,
+      method: 'GET',
+    }).then(({ data }) => resolve(data))
+    .catch(reject);
+
+  });
+}
+
+export const getSongPlaylists = song_id => {
+
+  return new Promise((resolve, reject) => {
+
+    axios({
+      url: `/api/songs/${ song_id }/playlists`,
+      method: 'GET',
+    }).then(({ data }) => {
+      resolve(data);
+    }).catch(reject);
+
+  });
+
+};
