@@ -12,7 +12,7 @@ const TOTAL_ARTISTS = 20;
 const TOTAL_ALBUMS = 10;
 const TOTAL_SONGS = 100;
 const TOTAL_PLAYLISTS = 10;
-const TOTAL_TAGS = 10;
+const TOTAL_TAGS = 100;
 const TOTAL_COMMENTS = process.env.NODE_ENV === 'test'
   ? 199
   : 10000; // 10000
@@ -75,8 +75,9 @@ const generateAlbums = (n = TOTAL_ALBUMS) => {
     const name = faker.random.words(wordCount);
     const image_url = `albums/album-${ Math.floor((Math.random() * IMAGES) + 1)}.jpg`;
     const release_date = moment(faker.date.past()).format('DD MMMM YYYY');
+    const released_by = faker.company.companyName();
 
-    albums.push({ id, name, release_date, image_url });
+    albums.push({ id, name, release_date, released_by, image_url });
 
   }
 
@@ -98,6 +99,7 @@ const generateSongs = (n = TOTAL_SONGS) => {
 
     const wordCount = Math.floor(Math.random() * 6) + 1;
     const name = faker.random.words(wordCount);
+    const description = Math.round(Math.random()) === 0 ? faker.lorem.sentence() : faker.lorem.sentences();
     const explicit = Math.round(Math.random()) === 0 ? false : true;
     const plays = Math.floor(Math.random() * 150000) + 1000;
     const likes = Math.floor(Math.random() * TOTAL_USERS);
@@ -105,7 +107,7 @@ const generateSongs = (n = TOTAL_SONGS) => {
     const artist_id = i % incrementArtist === 0 ? artistId++ : artistId;
     const album_id = i % incrementAlbum === 0 ? albumId++ : albumId;
 
-    songs.push({ id, name, explicit, plays, likes, reposts, artist_id, album_id });
+    songs.push({ id, name, description, explicit, plays, likes, reposts, artist_id, album_id });
   }
 
   return songs;
@@ -247,10 +249,15 @@ const generateSongsTags = (n = TOTAL_SONGS) => {
 
   for (let i = 1; i <= n; i++) {
 
-    const song_id = i;
-    const tag_id = Math.floor(Math.random() * TOTAL_TAGS) + 1;
+    const tagNum = Math.floor(Math.random() * 12) + 1;
 
-    songsTags.push({ song_id, tag_id });
+    for (let j = 0; j < tagNum; j++) {
+
+      const tag_id = Math.floor(Math.random() * TOTAL_TAGS) + 1;
+      const song_id = i;
+      songsTags.push({ song_id, tag_id });
+
+    }
 
   }
 

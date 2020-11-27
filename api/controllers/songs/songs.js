@@ -15,6 +15,9 @@ const { readUserById } = users;
 const { playlists } = require('../../../database/models');
 const { readPlaylistsBySongId, readSongsByPlaylistId } = playlists;
 
+const { tags } = require('../../../database/models');
+const { readTagsBySongId } = tags;
+
 const getSongComments = (req, res, next) => {
 
   const { song_id } = req.params;
@@ -121,7 +124,26 @@ const getSongs = (req, res, next) => {
 
     readSongs()
       .then(songsData => {
-        res.status(200).json(songsData);
+
+        const promises = [];
+
+        songsData.forEach(({ id }) => {
+          promises.push(readTagsBySongId(id));
+        });
+
+        Promise.all(promises)
+          .then(tagsArr => {
+
+            tagsArr.forEach((tags, i) => {
+              songsData[i].tags = tags;
+            });
+
+            res.status(200).json(songsData);
+
+          }).catch(readTagsError => {
+            next(readTagsError);
+          })
+
       }).catch(readError => {
         next(readError);
       });
@@ -141,8 +163,18 @@ const getSongById = (req, res, next) => {
     readSongById(id)
       .then(song => {
 
-        if (song.length === 0) next(new Error(errors.SONG_NOT_FOUND));
-        else res.status(200).json(song[0]);
+        readTagsBySongId(id)
+          .then(tags => {
+
+            if (song.length === 0) next(new Error(errors.SONG_NOT_FOUND));
+            else {
+              song[0].tags = tags;
+              res.status(200).json(song[0]);
+            }
+
+          }).catch(readTagsError => {
+            next(readTagsError);
+          });
 
       }).catch(readError => {
         next(readError);

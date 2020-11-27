@@ -102,7 +102,11 @@ export const getRandomSongAndData = songs => {
         getSongComments(song.id)
           .then(comments => {
 
-            resolve({ song, comments, artist });
+            getAlbum(song.album_id)
+              .then(album => {
+                song.album = album
+                resolve({ song, comments, artist });
+              }).catch(reject);
 
           }).catch(reject);
 

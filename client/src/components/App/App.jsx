@@ -8,6 +8,7 @@ import {
   CommentsList,
   Loader,
   Navbar,
+  TagsList,
 } from '../components';
 import {
   getSongs,
@@ -41,11 +42,17 @@ class App extends React.Component {
       collapseButtons: false,
       loading: true,
       initialLoad: true,
+      hideShowMoreButton: true,
+      showMore: false,
     };
 
     this.loadComments = this.loadComments.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.toggleInputFocus = this.toggleInputFocus.bind(this);
+  }
+
+  toggleShowMore() {
+    this.setState({ showMore: !this.state.showMore });
   }
 
   loadComments(handleListener) {
@@ -131,10 +138,15 @@ class App extends React.Component {
       && this.state.loading === true
     ) this.setState({ loading: false });
 
+    const commentsMetaInfoEl = document.querySelector('#comments-meta-info')
+
+    if (this.state.hideShowMoreButton === true && commentsMetaInfoEl.offsetHeight >= 120) {
+      this.setState({ hideShowMoreButton: false });
+    }
+
   }
 
   render() {
-
     return (
       <div className='App__container'>
         <Navbar collapseButtons={ this.state.collapseButtons } />
@@ -286,7 +298,50 @@ class App extends React.Component {
               { ...this.state }
             />
 
-            <div className='App__comments-meta-info'></div>
+            <div id='comments-meta-info' className={ `App__comments-meta-info${ !this.state.showMore ? ` App__comments-meta-info--show-less` : `` }` }>
+
+                {
+                  this.state.currentSong.description &&
+                    <p className='App__song-description'>{
+                      this.state.currentSong.description
+                    }</p>
+                }
+
+                {
+                  (this.state.currentSong.tags && this.state.currentSong.tags.length > 0) &&
+                    <TagsList tags={ this.state.currentSong.tags } />
+                }
+
+                {
+                  (this.state.currentSong.album && this.state.currentSong.album.released_by) &&
+                    <div className='App__released-by'>
+                      <h4>Released By:</h4>
+                      <span>{ this.state.currentSong.album.released_by }</span>
+                    </div>
+                }
+
+                {
+                  (this.state.currentSong.album && this.state.currentSong.album.release_date) &&
+                    <div className='App__release-date'>
+                      <h4>Release Date:</h4>
+                      <span>{ this.state.currentSong.album.release_date }</span>
+                    </div>
+                }
+
+                {
+                  (this.state.currentSong && this.state.currentSong.explicit === 1) &&
+                    <h4 className='App__explicit'>Explicit</h4>
+                }
+
+            </div>
+
+            {
+              !this.state.hideShowMoreButton &&
+                <button
+                  onClick={ e => this.toggleShowMore() }
+                  className='App__show-more-button'
+                >{ this.state.showMore === false ? `Show More ▼` : `Show Less ▲` }</button>
+            }
 
             <CommentsList
               comments={ this.state.comments }

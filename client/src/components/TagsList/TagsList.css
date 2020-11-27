@@ -1,0 +1,21 @@
+.TagsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.TagsList__tag {
+  margin-right: 6px;
+  margin-bottom: 6px;
+  background-color: #999;
+  color: #fff;
+  font-family: Interstate, "Lucida Grande", Garuda, Verdana, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 4px 7px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.TagsList__tag:hover {
+  background-color: #666;
+}

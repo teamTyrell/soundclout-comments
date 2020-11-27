@@ -7,4 +7,5 @@ module.exports = {
   users: require('./users/users'),
   albums: require('./albums/albums'),
   playlists: require('./playlists/playlists'),
+  tags: require('./tags/tags'),
 };

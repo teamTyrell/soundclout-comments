@@ -15,3 +15,4 @@ export { default as InPlaylists } from './InPlaylists/InPlaylists';
 export { default as AsideInfoUsers } from './AsideInfoUsers/AsideInfoUsers';
 export { default as GoMobile } from './GoMobile/GoMobile';
 export { default as AsideFooter } from './AsideFooter/AsideFooter';
+export { default as TagsList } from './TagsList/TagsList';
