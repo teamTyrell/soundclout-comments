@@ -7,10 +7,14 @@ import {
   faHeart,
   faRetweet,
   faCommentAlt,
+  faEllipsisH
 } from '@fortawesome/free-solid-svg-icons';
 import {
   formatNumber,
 } from '../../lib/utils';
+import{
+  Button,
+} from '../components';
 
 const RelatedTracks = props => {
 
@@ -39,72 +43,108 @@ const RelatedTracks = props => {
         {
           props.tracks &&
             tracks.map((song, index) => (
-              <li className='RelatedTracks__track' key={ index }>
+              <li className='RelatedTracks__track-container' key={ index }>
 
-                <img
-                  className='RelatedTracks__track-image'
-                  src={ `https://soundclout-images.s3.ca-central-1.amazonaws.com/${ song.album.image_url }` }
-                  alt=''
-                  width='50'
-                  height='50'
-                />
+                <div className='RelatedTracks__track'>
 
-                <div className='RelatedTracks__track-info-container'>
+                  <img
+                    className='RelatedTracks__track-image'
+                    src={ `https://soundclout-images.s3.ca-central-1.amazonaws.com/${ song.album.image_url }` }
+                    alt=''
+                    width='50'
+                    height='50'
+                  />
 
-                  <a className='RelatedTracks__artist-name' href='#'><span>{ song.album.artist.name }</span></a>
+                  <div className='RelatedTracks__track-info-container'>
 
-                  <a className='RelatedTracks__track-name' href='#'><span>{ song.name }</span></a>
+                    <a className='RelatedTracks__artist-name' href='#'><span>{ song.album.artist.name }</span></a>
 
-                  <div className='RelatedTracks__alt-info'>
+                    <a className='RelatedTracks__track-name' href='#'><span>{ song.name }</span></a>
 
-                    <div className='RelatedTracks__plays RelatedTracks__alt-info-item'>
+                    <div className='RelatedTracks__alt-info'>
 
-                      <FontAwesomeIcon
-                        icon={ faPlay }
-                        className='RelatedTracks__play-icon RelatedTracks__icon'
-                      />
+                      <div className='RelatedTracks__plays RelatedTracks__alt-info-item'>
 
-                      <span>{ formatNumber(song.plays) }</span>
+                        <FontAwesomeIcon
+                          icon={ faPlay }
+                          className='RelatedTracks__play-icon RelatedTracks__icon'
+                        />
 
-                    </div>
+                        <span>{ formatNumber(song.plays) }</span>
 
-                    <div className='RelatedTracks__likes RelatedTracks__alt-info-item'>
+                      </div>
 
-                      <FontAwesomeIcon
-                        icon={ faHeart }
-                        className='RelatedTracks__likes-icon RelatedTracks__icon'
-                      />
+                      <div className='RelatedTracks__likes RelatedTracks__alt-info-item'>
 
-                      <span>{ song.likes }</span>
+                        <FontAwesomeIcon
+                          icon={ faHeart }
+                          className='RelatedTracks__likes-icon RelatedTracks__icon'
+                        />
 
-                    </div>
+                        <span>{ song.likes }</span>
 
-                    <div className='RelatedTracks__reposts RelatedTracks__alt-info-item'>
+                      </div>
 
-                      <FontAwesomeIcon
-                        icon={ faRetweet }
-                        className='RelatedTracks__reposts-icon RelatedTracks__icon'
-                      />
+                      <div className='RelatedTracks__reposts RelatedTracks__alt-info-item'>
 
-                      <span>{ song.reposts }</span>
+                        <FontAwesomeIcon
+                          icon={ faRetweet }
+                          className='RelatedTracks__reposts-icon RelatedTracks__icon'
+                        />
 
-                    </div>
+                        <span>{ song.reposts }</span>
 
-                    <div className='RelatedTracks__comments RelatedTracks__alt-info-item'>
+                      </div>
 
-                      <FontAwesomeIcon
-                        icon={ faCommentAlt }
-                        className='RelatedTracks__comments-icon RelatedTracks__icon'
-                      />
+                      <div className='RelatedTracks__comments RelatedTracks__alt-info-item'>
 
-                      <span>100</span>
+                        <FontAwesomeIcon
+                          icon={ faCommentAlt }
+                          className='RelatedTracks__comments-icon RelatedTracks__icon'
+                        />
+
+                        <span>100</span>
+
+                      </div>
 
                     </div>
 
                   </div>
-
                 </div>
 
+                <div className='RelatedTracks__track-overlay'>
+
+                  <div className='RelatedTracks__track-actions'>
+
+                    <button className='RelatedTracks__play-button'>
+                      <FontAwesomeIcon
+                        icon={ faPlay }
+                        className='RelatedTracks__play-button-icon'
+                      />
+                    </button>
+
+                    <div className='RelatedTracks__action-buttons'>
+
+                      <Button type='default' size='small'>
+                        <FontAwesomeIcon
+                          icon={ faHeart }
+                          className='RelatedTracks__like-button-icon'
+                        />
+                      </Button>
+
+                      <Button type='default' size='small'>
+                        <FontAwesomeIcon
+                          icon={ faEllipsisH }
+                          className='RelatedTracks__more-button-icon'
+                        />
+                      </Button>
+
+                    </div>
+
+
+                  </div>
+
+                </div>
               </li>
             ))
         }
