@@ -41,74 +41,12 @@ class Comment extends React.Component {
 
   componentDidMount() {
 
-
-
-    this.commentContainer = document.querySelector(`#comment-container-${ this.props.id && this.props.id }`);
-    const replyButton = document.querySelector(`#comment-reply-button-${ this.props.id && this.props.id }`);
-
-    const addAndRunListener = e => {
-      this.onMouseOut(e);
-      this.commentContainer.removeEventListener('mouseout', addAndRunListener);
-      this.commentContainer.addEventListener('mouseover', removeAndRunListener);
-    };
-
-    const removeAndRunListener = e => {
-      this.onMouseOver(e);
-      this.commentContainer.removeEventListener('mouseover', removeAndRunListener);
-      this.commentContainer.addEventListener('mouseout', addAndRunListener);
-    };
-
-    this.commentContainer.addEventListener('mouseover', removeAndRunListener);
-
-
-
-
-    // replyButton.addEventListener('mouseover', () => {
-    //   this.commentContainer.removeEventListener('mouseover', addAndRunListener);
-    // });
-
-    // const replyButton = document.querySelector(`#comment-reply-button-${ this.props.id && this.props.id }`);
-
-    // this.commentContainer.addEventListener('mouseover', this.onMouseOver);
-    // this.commentContainer.addEventListener('mouseout', this.onMouseOut);
-
-    // replyButton.addEventListener('mouseover', e => {
-    //   commentContainer.removeEventListener('mouseover', this.onMouseOver);
-    //   commentContainer.removeEventListener('mouseout', this.onMouseOut);
-    // });
-
-    // replyButton.addEventListener('mouseout', e => {
-    //   commentContainer.addEventListener('mouseover', this.onMouseOver);
-    //   commentContainer.addEventListener('mouseout', this.onMouseOut);
-    // });
-
-  }
-
-  componentDidUpdate() {
-
-    // if (this.state.hover) {
-
-    //   const replyButton = document.querySelector(`#comment-reply-button`);
-
-    //   replyButton.addEventListener('mouseover', e => {
-    //     this.commentContainer.removeEventListener('mouseover', this.onMouseOver);
-    //     this.commentContainer.removeEventListener('mouseout', this.onMouseOut);
-    //   });
-
-    //   replyButton.addEventListener('mouseout', e => {
-    //     // this.commentContainer.addEventListener('mouseover', this.onMouseOver);
-    //     // this.commentContainer.addEventListener('mouseout', this.onMouseOut);
-    //   });
-
-    // }
-
   }
 
   render() {
 
     return (
       <div
-        id={ `comment-container-${ this.props.id !== undefined && this.props.id }` }
         className={ `Comment ${ this.props.isReply && `Comment--reply`}` }
       >
 
@@ -134,25 +72,23 @@ class Comment extends React.Component {
 
           <h5 className='Comment__timestamp'><Moment fromNow>{ this.props.created_at }</Moment></h5>
 
-          { this.state.hover && (
-              <Button
-                id={ `comment-reply-button` }
-                type='default'
-                size='small'
-              >
+          <Button
+            className='Comment___reply-button'
+            type='default'
+            size='small'
+          >
 
-                <div className='Comment__button-content'>
-                  <FontAwesomeIcon
-                    icon={ faReply }
-                    className='Comment__reply-icon'
-                  />
-                  {
-                    !this.props.collapseButtons && <span>Reply</span>
-                  }
-                </div>
+            <div className='Comment__button-content'>
+              <FontAwesomeIcon
+                icon={ faReply }
+                className='Comment__reply-icon'
+              />
+              {
+                !this.props.collapseButtons && <span>Reply</span>
+              }
+            </div>
 
-              </Button>
-          ) }
+          </Button>
 
         </div>
 

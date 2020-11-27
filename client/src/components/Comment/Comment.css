@@ -4,6 +4,13 @@
   padding-left: 0px;
 }
 
+.Comment button, .Comment--reply button {
+  visibility: hidden;
+}
+
+.Comment:hover button, .Comment--reply:hover button {
+  visibility: visible;
+}
 .Comment--reply {
   margin-left: 20px;
 }

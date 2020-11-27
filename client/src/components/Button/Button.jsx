@@ -15,9 +15,9 @@ const Button = props => (
        ${ props.size
         ? `Button--${ props.size }`
         : `Button--medium` }
-        ${ props.className && ` ${ props.className }`}`
+        ${ props.className && props.className }`
 
-      }
+    }
   >
     { props.children }
   </button>
